@@ -11,16 +11,16 @@
 5. Configure ffmpeg to use appropriate toolchain
 
 	-For arm-v7
-		./configure --enable-cross-compile --arch=arm --target-os=android --cross-prefix=arm-linux-androideabi- --extra-ldflags='-fuse-ld=bfd -fPIE ' --enable-static --disable-shared --extra-cflags='-fPIE' --enable-gpl --enable-pic 	
+		./configure --enable-cross-compile --arch=arm --target-os=android --cross-prefix=arm-linux-androideabi- --extra-ldflags='-fuse-ld=bfd -fPIE ' --enable-static --disable-shared --extra-cflags='-fPIE' --enable-gpl --enable-pic --prefix=<path to install ffmpeg bins, libs and include files>	
 
 	- Then do make clean; make
 	- This will generate ffmpeg, ffprobe and ffserver binary which can run on any android phone which as arm architecture.
 
 6. For a smaller binary use the following configuration command,
 	-For arm-v7
-		./configure --enable-cross-compile --arch=arm --target-os=android --cross-prefix=arm-linux-androideabi- --extra-ldflags='-fuse-ld=bfd -fPIE ' --enable-static --disable-shared --extra-cflags='-fPIE' --enable-gpl --enable-pic --enable-runtime-cpudetect
+		./configure --enable-cross-compile --arch=arm --target-os=android --cross-prefix=arm-linux-androideabi- --extra-ldflags='-fuse-ld=bfd -fPIE ' --enable-static --disable-shared --extra-cflags='-fPIE' --enable-gpl --enable-pic --enable-runtime-cpudetect --prefix=<path to install ffmpeg bins, libs and include files>
 
 7. Compiling with libx264 and libmp3lame support, we will need --enable-gpl option to compile with libx264 support, make sure that you compiled libx264 and libmp3lame properly for android
 
 	-For arm-v7 
-		./configure --enable-cross-compile --arch=arm --target-os=android --cross-prefix=arm-linux-androideabi- --extra-ldflags='-fuse-ld=bfd -L<Path to libmp3lame libs> -L<Path to libx264 libs> -fPIE ' --enable-static --disable-shared --enable-libx264 --enable-libmp3lame --extra-cflags='-I<Path to libx264 include dir> -I<Path to libmp3lame includer dir> -fPIE ' --enable-gpl --enable-runtime-cpudetect --enable-pic	
+		./configure --enable-cross-compile --arch=arm --target-os=android --cross-prefix=arm-linux-androideabi- --extra-ldflags='-fuse-ld=bfd -L<Path to libmp3lame libs> -L<Path to libx264 libs> -fPIE ' --enable-static --disable-shared --enable-libx264 --enable-libmp3lame --extra-cflags='-I<Path to libx264 include dir> -I<Path to libmp3lame includer dir> -fPIE ' --enable-gpl --enable-runtime-cpudetect --enable-pic	--prefix=<path to install ffmpeg bins, libs and include files>
