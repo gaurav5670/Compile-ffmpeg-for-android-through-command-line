@@ -1,0 +1,10 @@
+1. Download libx264 from "git://git.videolan.org/x264.git" or use the attached source.
+
+2. cd to libx264 directory
+
+3. Configure it,
+	- For amr-v7
+		./configure --host=arm-linux --enable-static --prefix=/home/gaurav/ffmpeg/andriod_ffmpeg/libx264/bins --cross-prefix=arm-linux-androideabi- --extra-cflags='-fPIE' --extra-ldflags='-fuse-ld=bfd' --disable-cli --enable-pic --enable-strip
+
+	- make clean
+	- make
