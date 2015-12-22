@@ -1,0 +1,9 @@
+1. Download libmp3lame from http://lame.sourceforge.net/ or download the local one attached in this repo.
+
+2. Untar and cd to lame directory.
+
+3. Configure it,
+	- For arm-v7
+		./configure --host=arm --prefix=<path where to install bins and incs> CC=arm-linux-androideabi-gcc  CFLAGS='-O3 -fpic -DANDROID -DHAVE_SYS_UIO_H=1 -mfpu=neon' LDFLAGS='-fuse-ld=bfd -fPIE -ldl -lc -lm' --with-pic
+
+	- make;make clean
